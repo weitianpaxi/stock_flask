@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="themepresss">
+
+    <!-- Page Title -->
+    <title>项目演示</title>
+
+    <!-- Icon fonts -->
+    <link href="static/assets/css/themify-icons.css" rel="stylesheet">
+    <link href="static/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="static/assets/css/flaticon.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Plugins for this template -->
+    <link href="static/assets/css/animate.css" rel="stylesheet">
+    <link href="static/assets/css/owl.carousel.css" rel="stylesheet">
+    <link href="static/assets/css/owl.theme.css" rel="stylesheet">
+    <link href="static/assets/css/odometer-theme-default.css" rel="stylesheet">
+    <link href="static/assets/css/slick.css" rel="stylesheet">
+    <link href="static/assets/css/slick-theme.css" rel="stylesheet">
+    <link href="static/assets/css/owl.transitions.css" rel="stylesheet">
+    <link href="static/assets/css/jquery.fancybox.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="static/assets/css/style.css" rel="stylesheet">
+    <link href="static/assets/css/responsive.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <!-- start page-wrapper -->
+    <div class="page-wrapper">
+
+        <!-- start preloader -->
+        <div class="preloader">
+            <div class="lds-ripple">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <!-- end preloader -->
+
+        <!-- Start header -->
+        <header id="header" class="site-header header-style-1 header-style-3">
+            <div class="topbar">
+                <div class="container">
+                    <div class="separator"></div>
+                    <div class="row">
+                        <div class="col col-sm-4">
+                            <div class="contact-info">
+                                <ul>
+                                    <li><i class="ti-mobile"></i> +86 189 8765 4321</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col col-sm-4">
+                            <div class="contact-info">
+                                <ul>
+                                    <li><i class="ti-email"></i>test@xsyu.edu.cn</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col col-sm-4">
+                            <div class="contact-info">
+                                <ul>
+                                    <li><i class="ti-location-pin"></i>丰京路18号 西安石油大学(鄠邑校区), 西安 , 陕西</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end container -->
+            </div>
+            <!-- end topbar -->
+
+            <nav class="navigation navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+{#                        <h1>中国股票市场主要指数数据处理与分析</h1>#}
+                        <a class="navbar-brand" href="/index"><span>股票数据处理与分析</span></a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse navbar-right navigation-holder">
+                        <ul class="nav navbar-nav">
+                            <li><a href="/index">主页</a></li>
+                            <li><a href="/kline">走势图</a></li>
+                            <li><a href="/deal_data">成交额</a></li>
+                            <li><a href="/team">团队</a></li>
+                        </ul>
+                    </div><!-- end of nav-collapse -->
+                    <!-- end side menu -->
+                </div><!-- end of container -->
+            </nav>
+        </header>
+        <!-- end of header -->
+
+        <!-- counter-area start -->
+        <div class="contact-area">
+            <div class="container">
+                <nav>
+                    <div id="navbar" class="navbar-collapse collapse navbar-left navigation-holder">
+                        <ul class="nav nav-pills">
+                            <li role="presentation"><a href="/kline">上证指数</a></li>
+                            <li role="presentation" class="active"><a href="/kline1">A股指数</a></li>
+                            <li role="presentation"><a href="/kline2">深证综指</a></li>
+                            <li role="presentation"><a href="/kline3">沪深300</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        <!-- 下面是绘图区域-->
+{#            <div id="sh_kline" style="width:1500px; height:600px;" class="contact-area"></div>#}
+            <div id="a_kine" style="width:1500px; height:600px;"></div>
+{#            <div id="zheng_kine" style="width:1500px; height:600px;"></div>#}
+{#            <div id="hs_kine" style="width:1500px; height:600px;"></div>#}
+        </div>
+        <!-- counter-area end -->
+
+        <!-- start site-footer -->
+        <footer class="site-footer">
+            <div class="lower-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="separator"></div>
+                        <div class="col col-xs-12" >
+                            <p class="copyright" style="padding-left: 30%">Copyright &copy; 2023. All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer><!-- end site-footer -->
+    </div>
+    <!-- end of page-wrapper -->
+
+
+
+    <!-- All JavaScript files
+    ================================================== -->
+    <script src="static/assets/js/jquery.min.js"></script>
+    <script src="static/assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="static/assets/js/echarts.min.js"></script>
+
+    <!-- Plugins for this template -->
+    <script src="static/assets/js/jquery-plugin-collection.js"></script>
+
+    <!-- Custom script for this template -->
+    <script src="static/assets/js/script.js"></script>
+    <script>
+        $(
+            function () {
+                let chart = echarts.init(document.getElementById('a_kine'), 'white', {renderer: 'canvas'});
+                $.ajax({
+                    type: "GET",
+                    url: "http://127.0.0.1:5000/get_kline/A股指数",
+                    dataType: 'json',
+                    success: function (result) {
+                        chart.setOption(result);
+                    }
+                });
+            }
+        )
+    </script>
+</body>
+</html>
